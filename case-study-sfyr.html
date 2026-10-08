@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SFYR — Case study — Ahmed Aly Ghaly</title>
+<meta name="description" content="Full-stack development for SFYR, a workforce management platform spanning web and mobile — HR, attendance, and request workflows.">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="images/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SFYR — Case study — Ahmed Aly Ghaly">
+<meta property="og:description" content="Full-stack development for SFYR, a workforce management platform spanning web and mobile — HR, attendance, and request workflows.">
+<meta property="og:image" content="images/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SFYR — Case study — Ahmed Aly Ghaly">
+<meta name="twitter:description" content="Full-stack development for SFYR, a workforce management platform spanning web and mobile — HR, attendance, and request workflows.">
+<meta name="twitter:image" content="images/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<noscript><style>.reveal,.reveal-stagger>*{opacity:1!important;transform:none!important}</style></noscript>
+<script>try{if(localStorage.getItem('ag-theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
+</head>
+<body>
+<div class="frame" aria-hidden="true"><div class="cols"><i></i><i></i><i></i><i></i><i></i></div></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="index.html" aria-label="Ahmed Aly Ghaly, home"><span>A</span><span>G</span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="work.html" aria-current="page">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a class="lang-toggle" href="case-study-sfyr-ar.html" lang="ar">AR</a>
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" aria-pressed="false"><svg class="tt-icon tt-sun" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="tt-sword" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 2L13 2L14 6V16H10V6L11 2Z"/><rect x="7" y="16" width="10" height="2" rx="1"/><rect x="10.5" y="18" width="3" height="4" rx=".5"/><circle cx="12" cy="22.5" r="1.5"/></svg><svg class="tt-icon tt-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="cs-hero">
+  <div class="wrap reveal in" style="padding-bottom:clamp(32px,5vw,56px);border-bottom:1px solid var(--line-2)">
+    <a class="cs-back" href="work.html">← Work</a>
+    <div class="cs-meta-row">
+      <div>
+        <p class="cs-eyebrow">Case study — 07</p>
+        <h1>SFYR</h1>
+      </div>
+      <dl class="cs-facts">
+        <div><dt>Role</dt><dd>Full-stack developer, team of 6</dd></div>
+        <div><dt>Build</dt><dd>React, React Native, Supabase</dd></div>
+        <div><dt>Type</dt><dd>HR &amp; workforce management platform — web and mobile</dd></div>
+        <div><dt>Status</dt><dd>In production ~2 years (Oct 2023–Aug 2025), now paused</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="cs-step" id="challenge">
+  <div class="wrap cs-step-in reveal">
+    <div class="cs-step-label"><b>01</b> Challenge</div>
+    <div class="cs-step-body">
+      <h2>One company's entire HR operation, in one system.</h2>
+      <p>B.M Enterprises needed one place for everything to do with an employee — personal details, passport and visa status, contracts, family information, documents, and company assets — plus the day-to-day operational layer on top of it: attendance, leave requests, and who's allowed to see or approve what.</p>
+      <p>Built by a 6-person team as both a web console and a mobile app, and used daily by 50+ employees and 50+ system users across the company.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cs-step" id="think">
+  <div class="wrap cs-step-in reveal">
+    <div class="cs-step-label"><b>02</b> Think</div>
+    <div class="cs-step-body">
+      <h2>Build the operational logic, not just the data screens.</h2>
+      <p>An HR system is easy to under-build as a set of forms over a database. The parts that actually mattered here were the ones with real rules behind them.</p>
+      <div class="cs-grid3">
+        <div>
+          <h3>A profile, not a page</h3>
+          <p>Personal info, passport/visa, contracts, family, documents, and assets each live as their own structured record, linked under one employee — not one long form.</p>
+        </div>
+        <div>
+          <h3>Attendance as logic, not a log</h3>
+          <p>Check-in and check-out compute working hours, late arrival, and early departure automatically — status, not just a timestamp.</p>
+        </div>
+        <div>
+          <h3>Requests as a tracked workflow</h3>
+          <p>Leave and early-leave requests move through creation, review, and a visible status — not an email that disappears into an inbox.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-step" id="stack">
+  <div class="wrap cs-step-in reveal">
+    <div class="cs-step-label"><b>03</b> System &amp; stack</div>
+    <div class="cs-step-body">
+      <h2>One Supabase backend, two real clients.</h2>
+      <p>Web and mobile weren't a responsive site and an afterthought wrapper — they were two separate applications, React for web and React Native (Expo) for mobile, sharing the same Postgres schema, auth, and business logic through Supabase. The same attendance rules and permission checks apply whichever client a user is on.</p>
+      <div class="cs-type" style="border-top:1px solid var(--line-2)">
+        <div><p class="role">Web</p><p class="fam">React · TypeScript</p></div>
+        <div><p class="role">Mobile</p><p class="fam">React Native · Expo · React Native Paper</p></div>
+        <div><p class="role">Backend</p><p class="fam">Supabase — Postgres, auth, storage</p></div>
+        <div><p class="role">Data &amp; forms</p><p class="fam">Refine · React Hook Form · Zod</p></div>
+        <div><p class="role">State</p><p class="fam">Zustand</p></div>
+        <div><p class="role">Permissions</p><p class="fam">CASL</p></div>
+        <div><p class="role">Dates &amp; locale</p><p class="fam">date-fns · date-fns-tz · expo-localization</p></div>
+        <div><p class="role">Workflow</p><p class="fam">Git · GitHub</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-step" id="platforms">
+  <div class="wrap cs-step-in reveal">
+    <div class="cs-step-label"><b>04</b> Web &amp; mobile</div>
+    <div class="cs-step-body">
+      <h2>Different jobs for each platform, same rules underneath.</h2>
+      <p>The web console was built for HR and management — the full employee profile, reporting, and approvals, where a larger screen and a keyboard do real work. The mobile app was built for employees themselves — check-in and check-out from wherever they actually are, and submitting or tracking a leave request without opening a laptop.</p>
+      <p>Both read and write through the same Supabase tables and the same CASL permission rules, so a role change or a new field in the employee profile only has to be defined once to be correct on both platforms.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cs-step" id="build">
+  <div class="wrap cs-step-in reveal">
+    <div class="cs-step-label"><b>05</b> Build</div>
+    <div class="cs-step-body">
+      <h2>Attendance and requests as real state, not status text.</h2>
+      <p>Check-in and check-out times feed directly into working-hours, late-arrival, and early-departure calculations, computed from company shift rules rather than entered by hand. A leave or early-leave request moves through its own lifecycle — submitted, under review, approved or declined — with that status visible to both the employee who filed it and whoever needs to act on it, on web or mobile.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cs-step" id="apart">
+  <div class="wrap cs-step-in reveal">
+    <div class="cs-step-label"><b>06</b> What sets it apart</div>
+    <div class="cs-step-body">
+      <h2>A few calls that came from real HR complexity, not a template.</h2>
+      <p>Looking back at it, three decisions do more work than they look like they do:</p>
+      <div class="cs-grid3">
+        <div>
+          <h3>A profile that's actually a data hub</h3>
+          <p>Passport, visa, contracts, family, documents, and assets are separate structured records under one employee, not fields crammed into a single form.</p>
+        </div>
+        <div>
+          <h3>Permissions enforced once, honored twice</h3>
+          <p>CASL-based role access is defined centrally and respected by both the web console and the mobile app — not reimplemented per screen or per platform.</p>
+        </div>
+        <div>
+          <h3>Two real products, one source of truth</h3>
+          <p>Web and mobile are genuinely separate applications with different jobs, not one codebase stretched to fit two screens — yet neither can drift out of sync with the other's data.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-step" id="refine">
+  <div class="wrap cs-step-in reveal">
+    <div class="cs-step-label"><b>07</b> Refine</div>
+    <div class="cs-step-body">
+      <h2>Built so a new role or request type wouldn't mean a rebuild.</h2>
+      <p>Because permissions ran through CASL rather than scattered if-checks, and requests were modeled as a generic status lifecycle rather than one-off logic per request type, adding a new role or a new kind of request was meant to be a configuration change — new rules and a new status set — not new screens from scratch.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cs-outcome">
+  <div class="wrap cs-step-in reveal">
+    <div class="cs-step-label"><b>08</b> Outcome</div>
+    <div>
+      <h2>A real system, in daily use, for about two years.</h2>
+      <p>SFYR ran in production for roughly two years, used daily by 50+ employees and 50+ system users across B.M Enterprises for attendance, leave, and employee records on both web and mobile — before development was paused and the project was not carried further.</p>
+    </div>
+  </div>
+</section>
+
+<nav class="cs-next wrap">
+  <a href="work.html"><span>Back to index</span>More work →</a>
+</nav>
+
+<footer class="section foot" id="contact">
+  <div class="wrap reveal">
+    <h2>Have something to design and build?</h2>
+    <a class="mail" href="mailto:ahmedalyghaly8@gmail.com">ahmedalyghaly8@gmail.com</a>
+    <p class="sign">Web Developer &amp; UI/UX Designer, designing systems, building experiences, and obsessing over the details that nobody notices.</p>
+    <div class="legal"><span>© 2026 Ahmed Aly Ghaly</span><a href="index.html">Back home</a></div>
+  </div>
+</footer>
+</main>
+<script src="site.js" defer></script>
+</body>
+</html>
