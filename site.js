@@ -27,13 +27,17 @@
 
   /* ---------- nav: shrink + hide on scroll ---------- */
   const top = document.querySelector('.top');
-  if (top) {
+  const bottomNav = document.querySelector('.bottom-nav');
+  if (top || bottomNav) {
     let lastY = window.scrollY, ticking = false;
     const update = () => {
       const y = window.scrollY;
-      top.classList.toggle('is-shrunk', y > 80);
-      if (y > lastY && y > 160) top.classList.add('is-hidden');
-      else top.classList.remove('is-hidden');
+      if (top) {
+        top.classList.toggle('is-shrunk', y > 80);
+        if (y > lastY && y > 160) top.classList.add('is-hidden');
+        else top.classList.remove('is-hidden');
+      }
+      if (bottomNav) bottomNav.classList.toggle('is-compact', y > 80);
       lastY = y;
       ticking = false;
     };
