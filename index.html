@@ -1,16 +1,17 @@
 <!doctype html>
 <!--
   EDIT GUIDE — Ahmed Aly Ghaly portfolio (Home)
-  Keep index.html and the images/ folder together. Open index.html in any browser.
+  Keep the HTML pages, styles.css, site.js, home.js and images/ together. Open index.html in any browser.
 
-  Images (images/):  avatar.webp (hero, 176px) · home-about-portrait.webp (about section)
+  Images (images/):  hero-avatar.webp (hero, 64px) · home-about-portrait.webp (about section)
                      value-poly.webp · noor-almamzar-full.webp · ab-interiors-full.webp · clinica-jizel.webp · car-clinic-full.webp (full-page screenshots)
                      Replace a file with the same name, or change the src in the HTML.
 
-  Colors: CSS variables at the top of <style> (:root) — --ink (background), --garnet (accent), --blue, --bone (text).
-  Fonts:  Bricolage Grotesque + Newsreader via Google Fonts (see --display and --serif).
+  Colors: CSS variables at the top of styles.css (:root) — --ink (background), --garnet (accent), --blue, --bone (text).
+  Fonts:  Bricolage Grotesque + Archivo + Newsreader via Google Fonts (see --display, --head and --serif).
   Text:   search for the section comments: HERO · SELECTED WORK · ABOUT · APPROACH · INSIDE THE PROCESS · CONTACT.
-  Process loop lines: the `steps` array in the script (quote + aside for each step); file names in `files`.
+  Process loop lines: the "steps" array in <script id="home-i18n"> (quote + aside for each step); file names in "files".
+          The loop logic itself lives in home.js and is shared with index-ar.html.
   Project previews: <template id="v0|v1|v2|v3|v4"> near the bottom (Value Poly, Noor Al Mamzar, AB Interiors, Clinica Jizel, Car Clinic Garage).
 -->
 <html lang="en">
@@ -19,26 +20,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ahmed Aly Ghaly — Web Developer & UI/UX Designer</title>
 <meta name="description" content="Ahmed Aly Ghaly is a Web Developer and UI/UX Designer who takes digital experiences from design to implementation.">
+<link rel="canonical" href="https://ahmedalyghaly.com/index.html">
+<link rel="alternate" hreflang="en" href="https://ahmedalyghaly.com/index.html">
+<link rel="alternate" hreflang="ar" href="https://ahmedalyghaly.com/index-ar.html">
+<link rel="alternate" hreflang="x-default" href="https://ahmedalyghaly.com/index.html">
+<meta name="theme-color" content="#0A0A0A">
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="images/favicon-16.png" sizes="16x16" type="image/png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://ahmedalyghaly.com/index.html">
+<meta property="og:site_name" content="Ahmed Aly Ghaly">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_AE">
 <meta property="og:title" content="Ahmed Aly Ghaly — Web Developer &amp; UI/UX Designer">
 <meta property="og:description" content="Ahmed Aly Ghaly is a Web Developer and UI/UX Designer who takes digital experiences from design to implementation.">
-<meta property="og:image" content="images/og-image.png">
+<meta property="og:image" content="https://ahmedalyghaly.com/images/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Ahmed Aly Ghaly — Web Developer &amp; UI/UX Designer">
 <meta name="twitter:description" content="Ahmed Aly Ghaly is a Web Developer and UI/UX Designer who takes digital experiences from design to implementation.">
-<meta name="twitter:image" content="images/og-image.png">
+<meta name="twitter:image" content="https://ahmedalyghaly.com/images/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <noscript><style>.reveal,.reveal-stagger>*{opacity:1!important;transform:none!important}</style></noscript>
 <script>try{if(localStorage.getItem('ag-theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
 </head>
 <body>
+<a class="skip" href="#top">Skip to content</a>
 <div class="frame" aria-hidden="true"><div class="cols"><i></i><i></i><i></i><i></i><i></i></div></div>
 
 <header class="top">
@@ -48,18 +59,18 @@
       <a href="work.html">Work</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <a class="lang-toggle" href="index-ar.html" lang="ar">AR</a>
-          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" aria-pressed="false"><svg class="tt-icon tt-sun" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="tt-sword" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 2L13 2L14 6V16H10V6L11 2Z"/><rect x="7" y="16" width="10" height="2" rx="1"/><rect x="10.5" y="18" width="3" height="4" rx=".5"/><circle cx="12" cy="22.5" r="1.5"/></svg><svg class="tt-icon tt-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <a class="lang-toggle" href="index-ar.html" hreflang="ar" lang="ar" aria-label="العربية">AR</a>
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Light theme" aria-pressed="false"><svg class="tt-icon tt-sun" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="tt-sword" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 2L13 2L14 6V16H10V6L11 2Z"/><rect x="7" y="16" width="10" height="2" rx="1"/><rect x="10.5" y="18" width="3" height="4" rx=".5"/><circle cx="12" cy="22.5" r="1.5"/></svg><svg class="tt-icon tt-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
     </nav>
   </div>
 </header>
-<nav class="bottom-nav" aria-label="Primary">
+<nav class="bottom-nav" aria-label="Primary, mobile">
     <a href="work.html"><svg class="bn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Work</span></a>
     <a href="about.html"><svg class="bn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg><span>About</span></a>
     <a href="contact.html"><svg class="bn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>Contact</span></a>
   </nav>
 
-<main id="top">
+<main id="top" tabindex="-1">
 
 <!-- HERO -->
 <section class="hero">
@@ -117,7 +128,7 @@
     </div>
     <div class="work-grid">
       <div class="list reveal-stagger">
-        <article class="proj" tabindex="0" data-type="Medical center website · WordPress">
+        <article class="proj" data-type="Medical center website · WordPress">
           <span class="proj-num" aria-hidden="true">01</span>
           <h3>Value Poly</h3>
           <p class="type">Medical center website</p>
@@ -125,7 +136,7 @@
           <a class="cs-link" href="case-study-value-poly.html">View case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <div class="thumb gfx"></div>
         </article>
-        <article class="proj" tabindex="0" data-type="Bilingual clinic website · UI/UX design">
+        <article class="proj" data-type="Bilingual clinic website · UI/UX design">
           <span class="proj-num" aria-hidden="true">02</span>
           <h3>Noor Al Mamzar</h3>
           <p class="type">Bilingual clinic website</p>
@@ -133,7 +144,7 @@
           <a class="cs-link" href="case-study-noor-almamzar.html">View case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <div class="thumb gfx"></div>
         </article>
-        <article class="proj" tabindex="0" data-type="Interior design studio website · WordPress">
+        <article class="proj" data-type="Interior design studio website · WordPress">
           <span class="proj-num" aria-hidden="true">03</span>
           <h3>AB Interiors</h3>
           <p class="type">Interior design studio website</p>
@@ -141,7 +152,7 @@
           <a class="cs-link" href="case-study-ab-interiors.html">View case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <div class="thumb gfx"></div>
         </article>
-        <article class="proj" tabindex="0" data-type="Luxury clinic website · WordPress">
+        <article class="proj" data-type="Luxury clinic website · WordPress">
           <span class="proj-num" aria-hidden="true">04</span>
           <h3>Clinica Jizel</h3>
           <p class="type">Luxury clinic website</p>
@@ -149,7 +160,7 @@
           <a class="cs-link" href="case-study-clinica-jizel.html">View case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <div class="thumb gfx"></div>
         </article>
-        <article class="proj" tabindex="0" data-type="Automotive garage website · UI/UX design">
+        <article class="proj" data-type="Automotive garage website · UI/UX design">
           <span class="proj-num" aria-hidden="true">05</span>
           <h3>Car Clinic Garage</h3>
           <p class="type">Automotive garage website</p>
@@ -160,7 +171,7 @@
       </div>
       <aside class="preview gfx" id="preview" aria-hidden="true"></aside>
     </div>
-    <a class="cs-link" href="work.html" style="margin-top:28px">View all work <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="cs-link all-work" href="work.html">View all work <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
 </section>
 
@@ -170,7 +181,7 @@
     <figure class="ab-frame home-portrait">
       <span class="ab-wm" aria-hidden="true">AG</span>
       <span class="ab-portrait">
-        <img src="images/home-about-portrait.webp" alt="Portrait of Ahmed Aly Ghaly" width="900" height="1349">
+        <img src="images/home-about-portrait.webp" alt="Portrait of Ahmed Aly Ghaly" width="900" height="1349" loading="lazy" decoding="async">
         <span class="ab-ref">FIG. 01 — AG / 2026</span>
       </span>
     </figure>
@@ -249,7 +260,7 @@
       <p>The clean version is simple. The real version is… a little different.</p>
     </div>
 
-    <div class="clean" aria-label="The clean version of the design process">
+    <div class="clean" role="group" aria-label="The clean version of the design process">
       <span class="lbl">The clean version</span>
       <span>Research</span><i class="sep"></i><span>Ideas</span><i class="sep"></i><span>Design</span><i class="sep"></i><span>Feedback</span><i class="sep"></i><span>Revision</span><i class="sep"></i><span>Testing</span><i class="sep"></i><span>Learn</span>
     </div>
@@ -264,14 +275,14 @@
           <p class="aside" id="lp-aside"></p>
         </div>
         <div class="lp-actions">
-          <button id="next" type="button">Next: Ideas</button>
+          <button class="btn primary" id="next" type="button">Next: Ideas</button>
           <span id="lp-loops">Getting started</span>
         </div>
       </div>
-      <div class="chips" id="chips" aria-label="Jump to a step"></div>
+      <div class="chips" id="chips" role="group" aria-label="Jump to a step"></div>
     </div>
 
-    <div class="end-grid" style="margin-top:clamp(64px,9vw,120px)">
+    <div class="end-grid process-end">
       <p class="philo"><span class="a">Good design isn't the design that never changed.</span><span class="b">It's the design that kept getting better because we learned something.</span></p>
       <ul class="files" aria-label="Design file history">
         <li><span class="ff"></span><span class="fn">Final.fig</span><span class="ft">Edited 3 weeks ago</span></li>
@@ -281,7 +292,7 @@
       </ul>
     </div>
 
-    <div class="chain" aria-label="Understand, think, try, learn, change, repeat">
+    <div class="chain" role="group" aria-label="Understand, think, try, learn, change, repeat">
       <span>Understand</span><i class="arw"></i><span>Think</span><i class="arw"></i><span>Try</span><i class="arw"></i><span>Learn</span><i class="arw"></i><span>Change</span><i class="arw"></i><span>Repeat.</span>
     </div>
     <p class="final">That's design.</p>
@@ -289,6 +300,8 @@
 </section>
 
 <!-- CONTACT -->
+</main>
+
 <footer class="section foot" id="contact">
   <div class="wrap reveal">
     <h2>Have something to design and build?</h2>
@@ -297,213 +310,72 @@
     <div class="legal"><span>© 2026 Ahmed Aly Ghaly</span><a href="#top">Back to top</a></div>
   </div>
 </footer>
-</main>
 
 <!-- work previews -->
-<template id="v0"><div class="browser"><div class="bar"><i></i><i></i><i></i></div><div class="shot"><img src="images/value-poly.webp" width="900" height="3640" alt="Value Poly website, full page"></div></div></template>
+<template id="v0"><div class="browser"><div class="bar"><i></i><i></i><i></i></div><div class="shot"><img src="images/value-poly.webp" width="900" height="3640" alt="Value Poly website, full page" loading="lazy" decoding="async"></div></div></template>
 
-<template id="v1"><div class="browser"><div class="bar"><i></i><i></i><i></i></div><div class="shot"><img src="images/noor-almamzar-full.webp" width="900" height="4184" alt="Noor Al Mamzar Medical Center website, full page"></div></div></template>
+<template id="v1"><div class="browser"><div class="bar"><i></i><i></i><i></i></div><div class="shot"><img src="images/noor-almamzar-full.webp" width="900" height="4184" alt="Noor Al Mamzar Medical Center website, full page" loading="lazy" decoding="async"></div></div></template>
 
-<template id="v2"><div class="browser"><div class="bar"><i></i><i></i><i></i></div><div class="shot"><img src="images/ab-interiors-full.webp" width="900" height="5345" alt="AB Interiors website, full page"></div></div></template>
+<template id="v2"><div class="browser"><div class="bar"><i></i><i></i><i></i></div><div class="shot"><img src="images/ab-interiors-full.webp" width="900" height="5345" alt="AB Interiors website, full page" loading="lazy" decoding="async"></div></div></template>
 
-<template id="v3"><div class="browser"><div class="bar"><i></i><i></i><i></i></div><div class="shot"><img src="images/clinica-jizel.webp" width="800" height="2295" alt="Clinica Jizel landing page, full page"></div></div></template>
+<template id="v3"><div class="browser"><div class="bar"><i></i><i></i><i></i></div><div class="shot"><img src="images/clinica-jizel.webp" width="800" height="2295" alt="Clinica Jizel landing page, full page" loading="lazy" decoding="async"></div></div></template>
 
-<template id="v4"><div class="browser"><div class="bar"><i></i><i></i><i></i></div><div class="shot"><img src="images/car-clinic-full.webp" width="900" height="4607" alt="Car Clinic Garage website, full page"></div></div></template>
+<template id="v4"><div class="browser"><div class="bar"><i></i><i></i><i></i></div><div class="shot"><img src="images/car-clinic-full.webp" width="900" height="4607" alt="Car Clinic Garage website, full page" loading="lazy" decoding="async"></div></div></template>
 
 <script src="site.js" defer></script>
-<script>
-(() => {
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const $ = (s, r = document) => r.querySelector(s);
-  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-  const ease = p => p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
-
-  /* ---------- hero: design ⇄ build ---------- */
-  const stage = $('#stage'), range = $('#cmp');
-  let touched = false, raf = 0;
-  function setV(v) {
-    stage.style.setProperty('--v', v);
-    range.value = v;
-    const d = Math.round(v);
-    range.setAttribute('aria-valuetext', d + '% design, ' + (100 - d) + '% build');
-  }
-  range.addEventListener('input', () => { touched = true; cancelAnimationFrame(raf); setV(+range.value); });
-  if (reduce) {
-    setV(46);
-  } else {
-    setV(100);
-    const t0 = performance.now() + 600, dur = 1800;
-    const tick = t => {
-      if (touched) return;
-      const p = Math.max(0, Math.min(1, (t - t0) / dur));
-      setV(100 - 54 * ease(p));
-      if (p < 1) raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-  }
-
-  /* ---------- selected work ---------- */
-  const projs = $$('.proj'), preview = $('#preview');
-  ['v0', 'v1', 'v2', 'v3', 'v4'].forEach((id, i) => {
-    const tpl = $('#' + id).content;
-    const viz = document.createElement('div');
-    viz.className = 'viz';
-    viz.appendChild(tpl.cloneNode(true));
-    const cap = document.createElement('span');
-    cap.className = 'viz-cap';
-    cap.textContent = projs[i].dataset.type;
-    viz.appendChild(cap);
-    preview.appendChild(viz);
-    $('.thumb', projs[i]).appendChild(tpl.cloneNode(true));
-  });
-  function activate(i) {
-    projs.forEach((p, j) => p.classList.toggle('is-active', i === j));
-    $$('.viz', preview).forEach((v, j) => v.classList.toggle('on', i === j));
-  }
-  projs.forEach((p, i) => {
-    p.addEventListener('pointerenter', () => activate(i));
-    p.addEventListener('focus', () => activate(i));
-  });
-  activate(0);
-
-  function fitScroll() {
-    $$('.shot').forEach(s => {
-      const img = $('img', s);
-      const run = () => {
-        const dist = Math.max(0, img.offsetHeight - s.clientHeight);
-        img.style.setProperty('--dist', dist + 'px');
-        img.style.setProperty('--dur', (dist / 80).toFixed(1) + 's');
-      };
-      if (img.complete) run(); else img.addEventListener('load', run, { once: true });
-    });
-  }
-  fitScroll();
-  let rz = 0;
-  addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(fitScroll, 150); });
-  const thumbIO = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('on', e.isIntersecting)), { threshold: .6 });
-  $$('.thumb').forEach(t => thumbIO.observe(t));
-
-  /* ---------- inside the process ---------- */
-  const steps = [
-    { name: 'Research',  q: '“Okay. I understand the project.”', a: 'Enjoy that feeling.\nIt probably won\'t last.' },
-    { name: 'Ideas',     q: '“Let\'s explore twelve directions.”', a: 'Then quietly return to the first sketch.' },
-    { name: 'Design',    q: '“It looks perfect in Figma.”', a: 'Figma is forgiving.\nReal screens are not.' },
-    { name: 'Feedback',  q: '“Just a few small changes.”', a: 'They are never small.' },
-    { name: 'Revision',  q: '“Just 8px.”', a: 'Nobody will notice.\nI will.' },
-    { name: 'Testing',   q: '“What am I supposed to click?”', a: 'Excellent. We found a problem.' },
-    { name: 'Learn',     q: '“Oh. That\'s why they asked.”', a: 'Write it down.\nThen back to Design.' }
-  ];
-  const files = ['Final.fig', 'Final 2.fig', 'Final New.fig', 'Final Approved Last V2.fig'];
-
-  const svg = $('#loop-svg'), NS = 'http://www.w3.org/2000/svg';
-  const C = { x: 440, y: 210, r: 140 };
-  const ang = { 2: 180, 3: 252, 4: 324, 5: 396, 6: 468 };
-  const rad = a => a * Math.PI / 180;
-  const onRing = a => ({ x: C.x + C.r * Math.cos(rad(a)), y: C.y + C.r * Math.sin(rad(a)) });
-  const P = i => i < 2 ? { x: 60 + 120 * i, y: 210 } : onRing(ang[i]);
-  function el(name, attrs, parent) {
-    const e = document.createElementNS(NS, name);
-    for (const k in attrs) e.setAttribute(k, attrs[k]);
-    (parent || svg).appendChild(e);
-    return e;
-  }
-  function arrow(x, y, rot) {
-    el('path', { d: 'M-5 -4L5 0L-5 4Z', transform: 'translate(' + x + ' ' + y + ') rotate(' + rot + ')', class: 'lp-arrow' });
-  }
-  el('line', { x1: 60, y1: 210, x2: 300, y2: 210, class: 'lp-line' });
-  el('circle', { cx: C.x, cy: C.y, r: C.r, class: 'lp-line' });
-  arrow(120, 210, 0); arrow(240, 210, 0);
-  [180, 252, 324, 396, 468].forEach(a => { const m = a + 36, p = onRing(m); arrow(p.x, p.y, m + 90); });
-
-  function labelPos(i, p) {
-    if (i < 3) return { x: p.x, y: p.y + 30, a: 'middle' };
-    if (i === 3) return { x: p.x, y: p.y - 18, a: 'middle' };
-    if (i === 4 || i === 5) return { x: p.x + 18, y: p.y + 5, a: 'start' };
-    return { x: p.x, y: p.y + 32, a: 'middle' };
-  }
-
-  const nodes = steps.map((s, i) => {
-    const p = P(i), g = el('g', { class: 'lp-node' });
-    el('circle', { cx: p.x, cy: p.y, r: 9, class: 'lp-dot' }, g);
-    const l = labelPos(i, p);
-    const t = el('text', { x: l.x, y: l.y, 'text-anchor': l.a, class: 'lp-label' }, g);
-    t.textContent = s.name;
-    g.addEventListener('click', () => jump(i));
-    return g;
-  });
-  const halo = el('circle', { r: 16, class: 'lp-halo' });
-  const token = el('circle', { r: 5.5, class: 'lp-token' });
-  let tx = 0, ty = 0;
-  function place(x, y) {
-    tx = x; ty = y;
-    token.setAttribute('cx', x); token.setAttribute('cy', y);
-    halo.setAttribute('cx', x); halo.setAttribute('cy', y);
-  }
-
-  const panel = $('#panel'), quote = $('#lp-quote'), aside = $('#lp-aside'), next = $('#next');
-  const chipsBox = $('#chips');
-  const chips = steps.map((s, i) => {
-    const b = document.createElement('button');
-    b.type = 'button'; b.className = 'chip-btn'; b.textContent = s.name;
-    b.addEventListener('click', () => jump(i));
-    chipsBox.appendChild(b);
-    return b;
-  });
-
-  let cur = 0, loops = 0, tid = 0, rt = 0;
-
-  function render() {
-    const s = steps[cur];
-    $('#lp-step').textContent = s.name;
-    $('#lp-file').textContent = cur < 2 ? 'Untitled.fig' : files[Math.min(loops, files.length - 1)];
-    $('#lp-loops').textContent = cur < 2 ? 'Getting started' : 'Loop ' + (loops + 1);
-    quote.textContent = s.q;
-    aside.textContent = s.a;
-    nodes.forEach((g, i) => g.classList.toggle('is-on', i === cur));
-    chips.forEach((c, i) => c.setAttribute('aria-current', i === cur ? 'step' : 'false'));
-    next.textContent = cur === 6 ? 'Back to Design' : 'Next: ' + steps[cur + 1].name;
-    panel.classList.remove('shown');
-    clearTimeout(rt);
-    rt = setTimeout(() => panel.classList.add('shown'), reduce ? 0 : 900);
-  }
-
-  function tween(fn, dur) {
-    const id = ++tid;
-    if (reduce) { fn(1); return; }
-    const t0 = performance.now();
-    const f = t => {
-      if (id !== tid) return;
-      const p = Math.min(1, (t - t0) / dur);
-      fn(ease(p));
-      if (p < 1) requestAnimationFrame(f);
-    };
-    requestAnimationFrame(f);
-  }
-  function line(from, to) {
-    tween(e => place(from.x + (to.x - from.x) * e, from.y + (to.y - from.y) * e), 650);
-  }
-  function arc(a0, a1) {
-    tween(e => { const p = onRing(a0 + (a1 - a0) * e); place(p.x, p.y); }, 750);
-  }
-
-  function goNext() {
-    if (cur === 6) {
-      loops++; cur = 2; render(); arc(468, 540);
-    } else {
-      const prev = cur; cur++; render();
-      if (prev < 2) line(P(prev), P(cur)); else arc(ang[prev], ang[prev] + 72);
+<script type="application/json" id="home-i18n">
+{
+  "valueText": "{d}% design, {b}% build",
+  "start": "Getting started",
+  "loop": "Loop ",
+  "back": "Back to Design",
+  "next": "Next: ",
+  "untitled": "Untitled.fig",
+  "files": [
+    "Final.fig",
+    "Final 2.fig",
+    "Final New.fig",
+    "Final Approved Last V2.fig"
+  ],
+  "steps": [
+    {
+      "name": "Research",
+      "q": "“Okay. I understand the project.”",
+      "a": "Enjoy that feeling.\nIt probably won't last."
+    },
+    {
+      "name": "Ideas",
+      "q": "“Let's explore twelve directions.”",
+      "a": "Then quietly return to the first sketch."
+    },
+    {
+      "name": "Design",
+      "q": "“It looks perfect in Figma.”",
+      "a": "Figma is forgiving.\nReal screens are not."
+    },
+    {
+      "name": "Feedback",
+      "q": "“Just a few small changes.”",
+      "a": "They are never small."
+    },
+    {
+      "name": "Revision",
+      "q": "“Just 8px.”",
+      "a": "Nobody will notice.\nI will."
+    },
+    {
+      "name": "Testing",
+      "q": "“What am I supposed to click?”",
+      "a": "Excellent. We found a problem."
+    },
+    {
+      "name": "Learn",
+      "q": "“Oh. That's why they asked.”",
+      "a": "Write it down.\nThen back to Design."
     }
-  }
-  function jump(i) {
-    if (i === cur) return;
-    const from = { x: tx, y: ty };
-    cur = i; render(); line(from, P(i));
-  }
-  next.addEventListener('click', goNext);
-
-  place(P(0).x, P(0).y);
-  render();
-})();
+  ]
+}
 </script>
+<script src="home.js" defer></script>
 </body>
 </html>
