@@ -9,6 +9,8 @@
 
   /* ---------- hero: design ⇄ build ---------- */
   const stage = $('#stage'), range = $('#cmp');
+  /* the wireframe layer is the same component as the built one, restyled by CSS (.wf) */
+  $('.layer.wf', stage).append($('.layer.built .bk', stage).cloneNode(true));
   let touched = false, raf = 0;
   const setV = v => {
     stage.style.setProperty('--v', v);

@@ -2,6 +2,8 @@
 <!--
   EDIT GUIDE — Ahmed Aly Ghaly portfolio (Home)
   Keep the HTML pages, styles.css, site.js, home.js and images/ together. Open index.html in any browser.
+  Shared head / header / mobile nav / footer live in partials/ and are stamped into every page: edit a partial (or the
+  STRINGS in build.mjs), then run  node build.mjs  (also regenerates sitemap.xml and robots.txt).
 
   Images (images/):  hero-avatar.webp (hero, 64px) · home-about-portrait.webp (about section)
                      value-poly.webp · noor-almamzar-full.webp · ab-interiors-full.webp · clinica-jizel.webp · car-clinic-full.webp (full-page screenshots)
@@ -20,6 +22,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ahmed Aly Ghaly — Web Developer & UI/UX Designer</title>
 <meta name="description" content="Ahmed Aly Ghaly is a Web Developer and UI/UX Designer who takes digital experiences from design to implementation.">
+<!-- build:head -->
 <link rel="canonical" href="https://ahmedalyghaly.com/index.html">
 <link rel="alternate" hreflang="en" href="https://ahmedalyghaly.com/index.html">
 <link rel="alternate" hreflang="ar" href="https://ahmedalyghaly.com/index-ar.html">
@@ -47,8 +50,10 @@
 <link rel="stylesheet" href="styles.css">
 <noscript><style>.reveal,.reveal-stagger>*{opacity:1!important;transform:none!important}</style></noscript>
 <script>try{if(localStorage.getItem('ag-theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
+<!-- /build:head -->
 </head>
 <body>
+<!-- build:chrome -->
 <a class="skip" href="#top">Skip to content</a>
 <div class="frame" aria-hidden="true"><div class="cols"><i></i><i></i><i></i><i></i><i></i></div></div>
 
@@ -60,15 +65,17 @@
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
       <a class="lang-toggle" href="index-ar.html" hreflang="ar" lang="ar" aria-label="العربية">AR</a>
-          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Light theme" aria-pressed="false"><svg class="tt-icon tt-sun" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="tt-sword" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 2L13 2L14 6V16H10V6L11 2Z"/><rect x="7" y="16" width="10" height="2" rx="1"/><rect x="10.5" y="18" width="3" height="4" rx=".5"/><circle cx="12" cy="22.5" r="1.5"/></svg><svg class="tt-icon tt-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Light theme" aria-pressed="false"><svg class="tt-icon tt-sun" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="tt-sword" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 2L13 2L14 6V16H10V6L11 2Z"/><rect x="7" y="16" width="10" height="2" rx="1"/><rect x="10.5" y="18" width="3" height="4" rx=".5"/><circle cx="12" cy="22.5" r="1.5"/></svg><svg class="tt-icon tt-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
     </nav>
   </div>
 </header>
 <nav class="bottom-nav" aria-label="Primary, mobile">
-    <a href="work.html"><svg class="bn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Work</span></a>
-    <a href="about.html"><svg class="bn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg><span>About</span></a>
-    <a href="contact.html"><svg class="bn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>Contact</span></a>
-  </nav>
+  <a href="work.html"><svg class="bn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Work</span></a>
+  <a href="about.html"><svg class="bn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg><span>About</span></a>
+  <a href="contact.html"><svg class="bn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>Contact</span></a>
+</nav>
+<!-- /build:chrome -->
+
 
 <main id="top" tabindex="-1">
 
@@ -101,15 +108,7 @@
             <div class="bk-cta">Confirm consultation</div>
           </div>
         </div>
-        <div class="layer wf" aria-hidden="true">
-          <div class="bk">
-            <div class="bk-head"><span class="bk-title">Book a consultation</span><span class="bk-step">Step 1 of 2</span></div>
-            <div class="bk-group"><p class="bk-label">Choose a day</p><div class="bk-row"><span class="pick on">Mon 12</span><span class="pick">Tue 13</span><span class="pick">Wed 14</span></div></div>
-            <div class="bk-group"><p class="bk-label">Choose a time</p><div class="bk-row"><span class="pick">Morning</span><span class="pick on">Afternoon</span><span class="pick">Evening</span></div></div>
-            <p class="bk-note">You can change or cancel this later.</p>
-            <div class="bk-cta">Confirm consultation</div>
-          </div>
-        </div>
+        <div class="layer wf" aria-hidden="true"></div>
         <input class="range" id="cmp" type="range" min="0" max="100" step="1" value="46" aria-label="Compare the design with the build">
         <div class="handle" aria-hidden="true"></div>
       </div>
@@ -133,7 +132,7 @@
           <h3>Value Poly</h3>
           <p class="type">Medical center website</p>
           <p class="desc">A website for a multi-specialty medical center, organized around its services: a clear way into each specialty, patient reviews, and a booking form that is never far away.</p>
-          <a class="cs-link" href="case-study-value-poly.html">View case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="cs-link" href="case-study-value-poly.html">View case study</a>
           <div class="thumb gfx"></div>
         </article>
         <article class="proj" data-type="Bilingual clinic website · UI/UX design">
@@ -141,7 +140,7 @@
           <h3>Noor Al Mamzar</h3>
           <p class="type">Bilingual clinic website</p>
           <p class="desc">A bilingual Arabic/English medical center site juggling four specialties and two languages in one hero, with a muted sage identity and the trust numbers placed ahead of any service copy.</p>
-          <a class="cs-link" href="case-study-noor-almamzar.html">View case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="cs-link" href="case-study-noor-almamzar.html">View case study</a>
           <div class="thumb gfx"></div>
         </article>
         <article class="proj" data-type="Interior design studio website · WordPress">
@@ -149,7 +148,7 @@
           <h3>AB Interiors</h3>
           <p class="type">Interior design studio website</p>
           <p class="desc">An interior design studio site spanning three services — interior, exterior, and landscape — each styled distinctly, backed by a 50+ photo property gallery and a client video tour.</p>
-          <a class="cs-link" href="case-study-ab-interiors.html">View case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="cs-link" href="case-study-ab-interiors.html">View case study</a>
           <div class="thumb gfx"></div>
         </article>
         <article class="proj" data-type="Luxury clinic website · WordPress">
@@ -157,7 +156,7 @@
           <h3>Clinica Jizel</h3>
           <p class="type">Luxury clinic website</p>
           <p class="desc">A luxury aesthetic clinic site spanning seven specialties, built around real treatment photography instead of icons, with practical info and booking always close at hand.</p>
-          <a class="cs-link" href="case-study-clinica-jizel.html">View case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="cs-link" href="case-study-clinica-jizel.html">View case study</a>
           <div class="thumb gfx"></div>
         </article>
         <article class="proj" data-type="Automotive garage website · UI/UX design">
@@ -165,13 +164,13 @@
           <h3>Car Clinic Garage</h3>
           <p class="type">Automotive garage website</p>
           <p class="desc">A performance-garage site built to read as technically credible to luxury car owners, leading with a marque row and real facility photos before any service claims.</p>
-          <a class="cs-link" href="case-study-car-clinic-garage.html">View case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="cs-link" href="case-study-car-clinic-garage.html">View case study</a>
           <div class="thumb gfx"></div>
         </article>
       </div>
       <aside class="preview gfx" id="preview" aria-hidden="true"></aside>
     </div>
-    <a class="cs-link all-work" href="work.html">View all work <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="cs-link all-work" href="work.html">View all work</a>
   </div>
 </section>
 
@@ -194,7 +193,7 @@
         <li><b>Build</b><span>WordPress and Elementor Pro, custom themes, React and TypeScript.</span></li>
         <li><b>Ship</b><span>Core Web Vitals, on-page SEO, and tracking with GA4 and Tag Manager.</span></li>
       </ul>
-      <a class="cs-link" href="about.html">Full bio &amp; toolkit <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="cs-link" href="about.html">Full bio &amp; toolkit</a>
     </div>
   </div>
 </section>
@@ -302,6 +301,7 @@
 <!-- CONTACT -->
 </main>
 
+<!-- build:footer -->
 <footer class="section foot" id="contact">
   <div class="wrap reveal">
     <h2>Have something to design and build?</h2>
@@ -310,6 +310,7 @@
     <div class="legal"><span>© 2026 Ahmed Aly Ghaly</span><a href="#top">Back to top</a></div>
   </div>
 </footer>
+<!-- /build:footer -->
 
 <!-- work previews -->
 <template id="v0"><div class="browser"><div class="bar"><i></i><i></i><i></i></div><div class="shot"><img src="images/value-poly.webp" width="900" height="3640" alt="Value Poly website, full page" loading="lazy" decoding="async"></div></div></template>
