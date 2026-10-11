@@ -1,7 +1,10 @@
 <footer class="section foot" id="contact">
   <div class="wrap reveal">
     <h2>{{footTitle}}</h2>
-    <a class="mail" href="mailto:{{email}}"{{mailDir}}>{{email}}</a>
+    <div class="foot-contact">
+      <a class="mail" href="mailto:{{email}}"{{mailDir}}>{{email}}</a>
+      <a class="foot-wa" href="https://wa.me/{{wa}}" target="_blank" rel="noopener" aria-label="{{waLabel}}"></a>
+    </div>
     <p class="sign">{{sign}}</p>
     <div class="legal"><span>© 2026 {{siteName}}</span><span class="legal-links"><a href="assets/cv.pdf" download="Ahmed_Aly_Ghaly_CV.pdf"{{cvLang}}>{{cvText}}</a><a href="{{legalHref}}">{{legalText}}</a></span></div>
   </div>
