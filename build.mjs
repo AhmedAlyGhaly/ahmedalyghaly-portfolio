@@ -11,6 +11,7 @@
 
    Edit a partial (or STRINGS below) and re-run the script instead of editing 22 files by hand. */
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -68,6 +69,9 @@ const fill = (tpl, vars) => tpl.replace(/\{\{(\w+)\}\}/g, (_, k) => {
   if (!(k in vars)) throw new Error(`missing template variable: ${k}`);
   return vars[k];
 });
+/* cache-busting: hosting serves CSS/JS with a 7-day max-age, so link them with a content hash */
+const ASSETS = ['styles.css', 'site.js', 'home.js'];
+const VERSION = Object.fromEntries(ASSETS.map(f => [f, createHash('sha1').update(read(join(ROOT, f))).digest('hex').slice(0, 8)]));
 const escAttr = s => s.replace(/&(?!amp;|lt;|gt;|quot;|#)/g, '&amp;').replace(/"/g, '&quot;');
 
 const upstream = readdirSync(ROOT).filter(f => f.endsWith('.html'));
@@ -119,6 +123,7 @@ for (const page of EN_PAGES) {
     const footer = /<!-- build:footer-min /.test(html) ? 'footer-min' : 'footer';
     html = html.replace(/(<!-- build:footer(?:-min)? -->)[\s\S]*?(<!-- \/build:footer(?:-min)? -->)/,
       (_, o, c) => `${o}\n${fill(partial(footer), vars)}\n${c}`);
+    html = html.replace(/(href|src)="(styles\.css|site\.js|home\.js)(?:\?v=[0-9a-f]+)?"/g, (_, attr, f) => `${attr}="${f}?v=${VERSION[f]}"`);
     write(path, html);
   }
 }
