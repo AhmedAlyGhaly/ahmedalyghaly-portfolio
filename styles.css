@@ -425,7 +425,7 @@ span.idx-row:hover{background:transparent}
 .idx-role span{display:block;color:var(--muted);margin-top:4px}
 .idx-brief{color:var(--muted);font-family:var(--serif);font-size:1.02rem;line-height:1.5}
 .idx-soon{display:block;margin-top:10px;color:var(--dim);font-family:var(--display);font-size:.78rem;letter-spacing:.04em}
-.idx-row::after{width:18px;height:18px;justify-self:end;color:var(--dim);transition:transform .2s,color .2s;margin-top:.3em}
+.idx-row::after{display:none;width:18px;height:18px;justify-self:end;color:var(--dim);transition:transform .2s,color .2s;margin-top:.3em}
 .idx-row:hover::after{transform:translateX(4px);color:var(--garnet-text)}
 @media (max-width:760px){
   .idx-row{grid-template-columns:28px 1fr 22px}
@@ -448,7 +448,8 @@ span.idx-row:hover{background:transparent}
 .cs-facts dd{margin:6px 0 0;font-size:1rem;font-weight:500}
 
 .cs-cover,.cs-shot,.cs-devices figure{border:1px solid var(--line-2);background:var(--ink-2);overflow:hidden;border-radius:2px}
-.cs-cover img,.cs-shot img,.cs-cover{margin-top:clamp(32px,5vw,56px)}
+.cs-cover{margin-top:clamp(32px,5vw,56px)}
+.cs-cover img,.cs-shot img,.cs-devices img{display:block;max-width:100%;height:auto;margin-inline:auto}
 
 .cs-step{border-top:1px solid var(--line)}
 .cs-step-in{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:24px clamp(24px,4vw,64px);padding-block:clamp(48px,7vw,96px)}
@@ -607,7 +608,6 @@ span.idx-row:hover{background:transparent}
 [dir="rtl"] .idx-row::after,[dir="rtl"] .cs-link::after{transform:scaleX(-1)}
 [dir="rtl"] .idx-row:hover::after{transform:scaleX(-1) translateX(4px)}
 [dir="rtl"] .chain .arw::after{right:auto;left:0;border-right:0;border-left:1px solid var(--line-2);transform:rotate(-135deg)}
-[dir="rtl"] .cs-next{flex-direction:row-reverse}
 
 /* decorative index numbers / dividers that sit at the reading-start edge */
 
@@ -624,3 +624,16 @@ span.idx-row:hover{background:transparent}
    must mirror too or it leans toward the wrong icon */
 [dir="rtl"] .tt-sword{transform:translate(-50%,-50%) rotate(-90deg)}
 [dir="rtl"][data-theme="light"] .tt-sword{transform:translate(-50%,-50%) rotate(90deg)}
+
+/* ---- Work index: two actions per project (case study / live site) ---- */
+:root{--ext:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 3H3v10h10v-3M9 3h4v4M13 3 7.5 8.5'/%3E%3C/svg%3E")}
+.idx-item{border-bottom:1px solid var(--line-2)}
+.idx-item .idx-row{border-bottom:none;padding-bottom:18px}
+.idx-actions{display:flex;flex-wrap:wrap;gap:12px;padding:0 0 30px;padding-inline:72px 0}
+.idx-act{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border:1px solid var(--line-2);color:var(--garnet-text);font-size:.9rem;font-weight:600;text-decoration:none;transition:background .2s,border-color .2s,color .2s}
+.idx-act::after{content:"";width:14px;height:14px;background:currentColor;-webkit-mask:var(--arrow) center/contain no-repeat;mask:var(--arrow) center/contain no-repeat}
+.idx-live{color:var(--bone)}
+.idx-live::after{-webkit-mask-image:var(--ext);mask-image:var(--ext)}
+.idx-act:hover{border-color:var(--garnet-text);background:var(--hi-tint)}
+[dir="rtl"] .idx-act:not(.idx-live)::after{transform:scaleX(-1)}
+@media (max-width:760px){.idx-actions{padding-inline:48px 0}}
