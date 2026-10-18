@@ -30,7 +30,6 @@
         /* ignore tiny deltas so trackpad / rubber-band jitter doesn't flicker the bar */
         if (Math.abs(dy) > 6 || y <= 160) nav.classList.toggle('is-hidden', dy > 0 && y > 160);
       }
-      bottomNav?.classList.toggle('is-compact', y > 80);
       if (Math.abs(dy) > 6 || y <= 160) lastY = y;
       ticking = false;
     };
