@@ -16,7 +16,7 @@
   --garnet-text:#E2694F;
   --blue:#8CA3C4;
   --display:"Bricolage Grotesque","Segoe UI",system-ui,-apple-system,sans-serif;
-  --head:"Archivo","Bricolage Grotesque","Segoe UI",system-ui,-apple-system,sans-serif;
+  --head:"Bricolage Grotesque","Segoe UI",system-ui,-apple-system,sans-serif;
   --serif:"Newsreader",Georgia,"Times New Roman",serif;
   --pad:clamp(20px,4vw,56px);
   --max:1280px;
@@ -593,8 +593,8 @@ span.idx-row:hover{background:transparent}
    Arabic / RTL
    ========================================================== */
 [dir="rtl"]{
-  --display:"IBM Plex Sans Arabic","Cairo","Segoe UI",system-ui,-apple-system,sans-serif;
-  --head:"Changa","IBM Plex Sans Arabic","Segoe UI",system-ui,-apple-system,sans-serif;
+  --display:"IBM Plex Sans Arabic","Segoe UI",system-ui,-apple-system,sans-serif;
+  --head:"IBM Plex Sans Arabic","Segoe UI",system-ui,-apple-system,sans-serif;
   --serif:"Amiri","IBM Plex Sans Arabic",serif;
 }
 [dir="rtl"] body{direction:rtl}
