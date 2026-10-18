@@ -18,6 +18,20 @@
     const d = Math.round(v);
     range.setAttribute('aria-valuetext', t.valueText.replace('{d}', d).replace('{b}', 100 - d));
   };
+  /* touch: drag the knob (the .handle::before zone); taps elsewhere on the card do nothing */
+  const handle = $('.handle', stage.parentNode);
+  handle.addEventListener('pointerdown', e => {
+    if (e.pointerType === 'mouse') return;
+    touched = true; cancelAnimationFrame(raf);
+    handle.setPointerCapture(e.pointerId);
+    const move = ev => {
+      const r = stage.getBoundingClientRect();
+      setV(Math.max(0, Math.min(100, (ev.clientX - r.left) / r.width * 100)));
+    };
+    const end = () => { handle.removeEventListener('pointermove', move); handle.removeEventListener('pointerup', end); handle.removeEventListener('pointercancel', end); };
+    handle.addEventListener('pointermove', move); handle.addEventListener('pointerup', end); handle.addEventListener('pointercancel', end);
+    e.preventDefault();
+  });
   range.addEventListener('input', () => { touched = true; cancelAnimationFrame(raf); setV(+range.value); });
   if (reduce) {
     setV(46);
