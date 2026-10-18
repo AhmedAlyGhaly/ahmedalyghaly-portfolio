@@ -39,7 +39,7 @@ const STRINGS = {
     footTitle: 'Have something to design and build?',
     sign: 'Web Developer &amp; UI/UX Designer, designing systems, building experiences, and obsessing over the details that nobody notices.',
     backTop: 'Back to top', backHome: 'Back home', cvText: 'Download CV', waLabel: 'Message on WhatsApp', cvLang: '', mailDir: '',
-    fonts: 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap'
+    fonts: 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Newsreader:ital,wght@0,300..600;1,300..600&display=swap'
   },
   ar: {
     dir: 'rtl', locale: 'ar_AE', suffix: '-ar',

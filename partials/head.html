@@ -21,7 +21,8 @@
 <meta name="twitter:image" content="{{site}}images/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="{{fonts}}" rel="stylesheet">
+<link rel="preload" as="style" href="{{fonts}}" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="{{fonts}}" rel="stylesheet"></noscript>
 {{specimens}}<link rel="stylesheet" href="styles.css">
 <noscript><style>.reveal,.reveal-stagger>*{opacity:1!important;transform:none!important}</style></noscript>
 <script>try{if(localStorage.getItem('ag-theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
