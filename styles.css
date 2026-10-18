@@ -637,3 +637,6 @@ span.idx-row:hover{background:transparent}
 .idx-act:hover{border-color:var(--garnet-text);background:var(--hi-tint)}
 [dir="rtl"] .idx-act:not(.idx-live)::after{transform:scaleX(-1)}
 @media (max-width:760px){.idx-actions{padding-inline:48px 0}}
+
+/* Arabic has no true italic: keep the serif upright (also saves the Amiri italic font download) */
+[dir="rtl"] .bk-note,[dir="rtl"] .aside,[dir="rtl"] .sign,[dir="rtl"] .arc-philo blockquote p{font-style:normal}

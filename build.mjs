@@ -39,7 +39,7 @@ const STRINGS = {
     footTitle: 'Have something to design and build?',
     sign: 'Web Developer &amp; UI/UX Designer, designing systems, building experiences, and obsessing over the details that nobody notices.',
     backTop: 'Back to top', backHome: 'Back home', cvText: 'Download CV', waLabel: 'Message on WhatsApp', cvLang: '', mailDir: '',
-    fonts: 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Newsreader:ital,wght@0,300..600;1,300..600&display=swap'
+    fontsCss: 'fonts-en.css', fontPreload: ['BricolageGrotesque-normal-200-800-latin'],
   },
   ar: {
     dir: 'rtl', locale: 'ar_AE', suffix: '-ar',
@@ -52,7 +52,7 @@ const STRINGS = {
     footTitle: 'عندك مشروع يستاهل تصميم صح؟',
     sign: 'مطور ويب ومصمم UI/UX، بصمم أنظمة، وأبني تجارب، ومهتم بالتفاصيل اللي محدش بيلاحظها.',
     backTop: 'رجوع لفوق', backHome: 'رجوع للرئيسية', cvText: 'حمّل السيرة الذاتية', waLabel: 'راسلني على واتساب', cvLang: ' hreflang="en"', mailDir: ' dir="ltr"',
-    fonts: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300..700&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap'
+    fontsCss: 'fonts-ar.css', fontPreload: ['IBMPlexSansArabic-normal-400-arabic'],
   }
 };
 
@@ -106,8 +106,9 @@ for (const page of EN_PAGES) {
       url: SITE + file, enUrl: SITE + `${page}.html`, arUrl: SITE + `${page}-ar.html`, site: SITE,
       ogAlt: other.locale,
       title: escAttr(title), desc,
+      fontPreloads: t.fontPreload.map(f => `<link rel="preload" as="font" type="font/woff2" href="font-files/${f}.woff2" crossorigin>`).join('\n'),
       specimens: specimens.length
-        ? `<link href="https://fonts.googleapis.com/css2?${specimens.join('&')}&display=swap" rel="stylesheet">\n` : '',
+        ? `<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link href="https://fonts.googleapis.com/css2?${specimens.join('&')}&display=swap" rel="stylesheet">\n` : '',
       markHref: home ? '#top' : link('index'),
       markLabel: home ? t.markTop : t.markHome,
       workHref: link('work'), aboutHref: link('about'), contactHref: link('contact'),
