@@ -65,20 +65,20 @@
 
   /* project screenshots are heavy: hold their src until the block is near the viewport, so they
      don't compete with the hero for bandwidth (native loading="lazy" fires very early on slow links) */
-  const holds = [preview, ...$('.thumb', list)];
-  holds.forEach(h => $('img', h).forEach(img => {
+  const holds = [preview, ...$$('.thumb', list)];
+  holds.forEach(h => $$('img', h).forEach(img => {
     img.dataset.src = img.getAttribute('src');
     img.removeAttribute('src');
     img.removeAttribute('loading');
   }));
   const loadIO = new IntersectionObserver(es => es.forEach(e => {
     if (!e.isIntersecting) return;
-    $('img[data-src]', e.target).forEach(img => { img.src = img.dataset.src; img.removeAttribute('data-src'); });
+    $$('img[data-src]', e.target).forEach(img => { img.src = img.dataset.src; img.removeAttribute('data-src'); });
     loadIO.unobserve(e.target);
   }), { rootMargin: '300px 0px' });
   holds.forEach(h => loadIO.observe(h));
 
-  const vizs = $('.viz', preview);
+  const vizs = $$('.viz', preview);
   let active = -1;
   const activate = el => {
     const i = projs.indexOf(el);
