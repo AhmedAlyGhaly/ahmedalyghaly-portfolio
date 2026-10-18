@@ -198,7 +198,8 @@ h1 .l2{font-weight:900}
 /* touch screens: only the knob drags, so a swipe that starts on the card scrolls the page instead of moving the slider */
 @media (pointer:coarse){
   .range{pointer-events:none}
-  .handle::before{content:"";position:absolute;top:50%;left:-26px;width:53px;height:110px;transform:translateY(-50%);pointer-events:auto;touch-action:none;cursor:ew-resize}
+  .handle{touch-action:none}
+  .handle::before{content:"";position:absolute;top:50%;left:-26px;width:53px;height:110px;transform:translateY(-50%);pointer-events:auto;cursor:ew-resize}
 }
 .cap{display:flex;justify-content:space-between;gap:12px;margin-top:12px;color:var(--muted);font-size:.92rem}
 @media (max-width:900px){.compare{margin-inline:auto}}
