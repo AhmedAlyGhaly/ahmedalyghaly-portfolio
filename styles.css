@@ -538,8 +538,8 @@ span.idx-row:hover{background:transparent}
 .ab-hero .role{margin-top:14px}
 .ab-hero h1{margin:18px 0 0;font-size:clamp(2.4rem,6vw,4.6rem);line-height:.98}
 
-/* ---- About page: 01 Systems Thinking (fixed light interlude band: re-declares the light tokens) ---- */
-.arc-systems{color-scheme:light;--ink:#FAF8F3;--panel:#FAF8F3;--line:rgba(10,8,4,.12);--line-2:rgba(10,8,4,.22);--bone:#15130F;--muted:#5B584F;--dim:#6E6A5F;--garnet-text:#9C3B23;background:var(--ink);color:var(--bone);border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
+/* ---- About page: 01 Systems Thinking (follows the active theme; a subtle raised band instead of a hard light interlude) ---- */
+.arc-systems{background:var(--ink-2);border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
 .arc-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line-2)}
 .arc-card{padding:28px 26px;border-inline-start:1px solid var(--line-2)}
 .arc-card:first-child{border-inline-start:none}
